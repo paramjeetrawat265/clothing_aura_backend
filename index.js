@@ -1,6 +1,5 @@
 const express = require("express");
 var cors = require('cors');
-const { connection } = require("./Config/db");
 const { Member } = require("./Routes/Member.routes");
 const { authentication } = require("./Middleware/Authentication");
 const { authorization } = require("./Middleware/Authorization");
@@ -9,6 +8,7 @@ const { DataRouter } = require("./Routes/Data.Routes");
 const { SignupRoute } = require("./Routes/Signup.Routes");
 const { LoginRoute } = require("./Routes/Login.Routes");
 const { CartRoute } = require("./Routes/Cart.Routes");
+const { connection } = require("./Config/db");
 const app = express();
 require("dotenv").config();
 app.get('/', (req, res) => {
